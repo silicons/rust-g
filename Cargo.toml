@@ -60,6 +60,7 @@ pathfinding = { version = "4.2.1", optional = true }
 num = { version = "0.4.0", optional = true }
 dmi = { version = "0.3.0", optional = true }
 delaunator = { version = "1.0.2", optional = true }
+voronoice = { version = "0.2.0", optional = true }
 
 [features]
 # These are things that Citadel needs to run.
@@ -112,7 +113,7 @@ acreplace = ["aho-corasick"]
 cellularnoise = ["rand", "rayon"]
 dmi = ["png", "image", "dep:dmi"]
 file = []
-geometry = ["delaunator"]
+geometry = ["delaunator", "voronoice"]
 git = ["git2", "chrono"]
 http = ["reqwest", "serde", "serde_json", "once_cell", "jobs"]
 json = ["serde", "serde_json"]

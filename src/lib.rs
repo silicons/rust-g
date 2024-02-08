@@ -18,6 +18,8 @@ pub mod dbpnoise;
 pub mod dmi;
 #[cfg(feature = "file")]
 pub mod file;
+#[cfg(feature = "geometry")]
+pub mod geometry;
 #[cfg(feature = "git")]
 pub mod git;
 #[cfg(feature = "hash")]

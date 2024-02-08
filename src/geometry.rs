@@ -1,8 +1,6 @@
-use std::cmp::min;
-
 use delaunator::Point;
 use serde::{Deserialize, Serialize};
-use voronoice::{BoundingBox, Voronoi};
+use voronoice::BoundingBox;
 
 /**
  * This file is tightly coupled with Citadel Station's repository.
@@ -52,7 +50,7 @@ impl DMGraph {
             edges: Vec::new(),
         };
         building.edges = vec![Vec::new(); size];
-        return building
+        return building;
     }
 
     pub fn connect(&mut self, a: usize, b: usize) {
@@ -62,7 +60,9 @@ impl DMGraph {
 
     pub fn connect_single(&mut self, a: usize, b: usize) {
         let edge_list = &mut self.edges[a];
-        if edge_list.iter().any(|&e| e == b) { return; }
+        if edge_list.iter().any(|&e| e == b) {
+            return;
+        }
         edge_list.push(b);
     }
 }
@@ -155,10 +155,10 @@ byond_fn!(
                     }
                 );
             }
-            if(requires_area) {
+            if requires_area {
                 areas_constructed[i] = Some(DMVec2::polygon_area(&vertices_constructed));
             }
-            if(requires_cell) {
+            if requires_cell {
                 cells_constructed[i] = Some(vertices_constructed);
             }
         }
